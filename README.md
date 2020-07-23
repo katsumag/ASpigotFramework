@@ -42,7 +42,8 @@ of ASpigotFramework, use version `1.0`. It should be replace `[VERSION]`.
 ```kotlin
 createListener<SomeEvent>(YourPluginInstance) {
     //your code here
-}```
+}
+```
 
 That's all that is required. ASF will register your listener for you.
 
@@ -58,7 +59,8 @@ An example of turning a Material into an ItemStack with a custom name and lore i
 Material.OAK_WOOD.toItemStack()
         .setItemAmount(64)
         .setDisplayName("&4&lTest!")
-        .setLore("This", "is", "a", "&4&lTest!")```
+        .setLore("This", "is", "a", "&4&lTest!")
+```
        
 #General Extension Functions
 
