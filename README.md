@@ -75,6 +75,9 @@ as we accept most of them.
 # Support
 
 If you have any questions or are in need of support, you may join HelpChat discord server, or my own. 
+
 If you join HelpChat be sure to ping katsumag#7876 or Conclure#0001.
+
 [HelpChat](https://helpch.at/discord)
+
 [My Server](https://discord.gg/BmjaCn3)
