@@ -1,5 +1,6 @@
 package me.katsumag.aspigotframework.modules.itembuilder
 
+import me.katsumag.aspigotframework.colour
 import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.inventory.ItemStack
@@ -16,9 +17,14 @@ fun Material.toItemStack(): ItemStack {
     return ItemStack(this)
 }
 
+fun ItemStack.setItemAmount(amount: Int): ItemStack {
+    this.amount = amount
+    return this
+}
+
 fun ItemStack.setDisplayName(name: String): ItemStack {
     transformMeta {
-        setDisplayName(name)
+        setDisplayName(name.colour())
     }
 
     return this
