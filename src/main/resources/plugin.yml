@@ -1,0 +1,4 @@
+name: KatLib
+version: @version@
+main: me.katsumag.katlib.KatLib
+api-version: 1.16
