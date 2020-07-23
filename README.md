@@ -4,9 +4,9 @@ A framework library that simplifies interacting with the Spigot API.
 
 Authors: katsumag, Conclure
 
-![Version](https://img.shields.io/nexus/r/me.katsumag/a-spigot-framework?nexusVersion=3&server=https%3A%2F%2Frepo.katsumag.me%2F&style=plastic) ![License]((https://img.shields.io/github/license/katsumag/ASpigotFramework?style=plastic))
+![Version](https://img.shields.io/nexus/r/me.katsumag/a-spigot-framework?nexusVersion=3&server=https%3A%2F%2Frepo.katsumag.me%2F&style=plastic) ![License](https://img.shields.io/github/license/katsumag/ASpigotFramework?style=plastic)
 
-#Setup
+# Setup
 
 You will need to shade and relocate ASpigotFramework to be able to use it at runtime.
 
@@ -35,7 +35,7 @@ of ASpigotFramework, use version `1.0`. It should be replace `[VERSION]`.
 
 # Usage
 
-##Listener Module
+## Listener Module
 
 **kotlin**
 
@@ -47,7 +47,7 @@ createListener<SomeEvent>(YourPluginInstance) {
 
 That's all that is required. ASF will register your listener for you.
 
-##ItemBuilder Module
+## ItemBuilder Module
 
 **kotlin**
 
@@ -62,7 +62,7 @@ Material.OAK_WOOD.toItemStack()
         .setLore("This", "is", "a", "&4&lTest!")
 ```
        
-#General Extension Functions
+# General Extension Functions
 
 Since this framework/library is written in kotlin, we wrote some general extension functions, which you can find [here](https://github.com/katsumag/ASpigotFramework/blob/master/src/main/kotlin/me/katsumag/aspigotframework/GeneralExtensions.kt)
 
