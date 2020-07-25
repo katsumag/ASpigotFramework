@@ -37,6 +37,13 @@ fun ItemStack.setLore(vararg lore: String): ItemStack {
     return this
 }
 
+fun ItemStack.setItemLore(lore: Array<String>): ItemStack {
+    transformMeta {
+        setLore(lore.toList())
+    }
+    return this
+}
+
 fun ItemStack.setData(byte: Byte): ItemStack {
     this.data?.data = byte
     return this
