@@ -1,9 +1,17 @@
 package me.katsumag.aspigotframework
 
-import org.bukkit.Bukkit
+import me.katsumag.aspigotframework.modules.commands.Command
 import net.md_5.bungee.api.ChatColor
+import org.bukkit.Bukkit
+import org.bukkit.Server
+import org.bukkit.command.CommandMap
+import org.bukkit.command.SimpleCommandMap
 import org.bukkit.scheduler.BukkitRunnable
+import java.lang.reflect.Field
+import java.lang.reflect.Method
+import java.util.logging.Level
 import java.util.regex.Pattern
+
 
 val HEX_PATTERN: Pattern = Pattern.compile("#<([A-Fa-f0-9]){6}>")
 
