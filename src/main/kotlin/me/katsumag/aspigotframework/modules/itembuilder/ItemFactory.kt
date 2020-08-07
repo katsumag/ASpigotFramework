@@ -12,9 +12,7 @@ class ItemFactory(private var itemStack: ItemStack) {
         }
     }
 
-    constructor(material: Material) {
-        itemStack = ItemStack(material)
-    }
+    constructor(material: Material) : this(ItemStack(material))
 
     fun setDisplayName(name: String): ItemFactory {
         itemStack = itemStack.setDisplayName(name)
@@ -31,7 +29,7 @@ class ItemFactory(private var itemStack: ItemStack) {
         return this
     }
 
-    fun setData(data: Byte): ItemFactory {
+    fun setData(data: Int): ItemFactory {
         itemStack.setData(data)
         return this
     }

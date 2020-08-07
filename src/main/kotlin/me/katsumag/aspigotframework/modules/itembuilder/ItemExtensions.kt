@@ -4,6 +4,7 @@ import me.katsumag.aspigotframework.colour
 import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.inventory.ItemStack
+import org.bukkit.inventory.meta.Damageable
 import org.bukkit.inventory.meta.ItemMeta
 import java.util.*
 
@@ -44,8 +45,9 @@ fun ItemStack.setItemLore(lore: Array<String>): ItemStack {
     return this
 }
 
-fun ItemStack.setData(byte: Byte): ItemStack {
-    this.data?.data = byte
+fun ItemStack.setData(data: Int): ItemStack {
+    val damageable = this.itemMeta as Damageable
+    damageable.damage = data
     return this
 }
 

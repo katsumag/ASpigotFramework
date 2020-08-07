@@ -8,7 +8,6 @@ import javax.annotation.Nonnull
 
 class SuperflatWorldGenerator(private val options: LayerOptions<SuperflatWorldGenerator>) : ChunkGenerator() {
 
-    @Nonnull
     override fun generateChunkData(world: World, random: Random, chunkX: Int, chunkZ: Int, biome: BiomeGrid): ChunkData {
 
         val chunk = createChunkData(world)

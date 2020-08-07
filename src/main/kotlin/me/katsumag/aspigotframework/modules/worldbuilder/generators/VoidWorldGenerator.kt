@@ -7,7 +7,6 @@ import javax.annotation.Nonnull
 
 class VoidWordGenerator : ChunkGenerator() {
 
-    @Nonnull
     override fun generateChunkData(world: World, random: Random, x: Int, z: Int, biome: BiomeGrid): ChunkData = createChunkData(world)
 
 }

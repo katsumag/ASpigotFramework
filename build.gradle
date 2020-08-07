@@ -1,7 +1,7 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.3.72'
+    id 'org.jetbrains.kotlin.jvm' version '1.4.0-rc'
     id 'com.github.johnrengelman.shadow' version '5.2.0'
     id 'maven-publish'
 }
@@ -12,7 +12,7 @@ version = '1.0'
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
-ext.kotlin_version = '1.3.72'
+ext.kotlin_version = '1.4.0-rc'
 
 repositories {
     mavenCentral()
@@ -27,7 +27,6 @@ dependencies {
 
 shadowJar {
     relocate 'kotlin', 'me.katsumag.a-spigot-framework.shaded.kotlin'
-    relocate 'sh.okx.timeapi', 'me.katsumag.aspigotframework.shaded.timeapi'
 }
 
 processResources {
@@ -63,8 +62,8 @@ publishing {
             url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
 
             credentials {
-                username project.hasProperty('mavenUser') ? mavenUser : System.env["MAVEN_USER"]
-                password project.hasProperty('mavenPassword') ? mavenPassword : System.env["MAVEN_PASSWORD"]
+                username System.env["MAVEN_USER"]
+                password System.env["MAVEN_PASSWORD"]
             }
         }
     }
