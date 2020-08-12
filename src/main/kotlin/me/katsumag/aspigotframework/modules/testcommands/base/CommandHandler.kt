@@ -17,7 +17,7 @@ import java.util.*
 class CommandHandler internal constructor(// Handler for the parameter types
         private val parameterHandler: ParameterHandler, private val completionHandler: CompletionHandler,
         private val messageHandler: MessageHandler, private val command: CommandBase,
-        commandName: String?, aliases: List<String?>, private var hideTab: Boolean) : Command(commandName!!) {
+        commandName: String, aliases: List<String?>, private var hideTab: Boolean) : Command(commandName) {
     // Contains all the sub commands
     private val commands = mutableMapOf<String, CommandData?>()
 
@@ -150,7 +150,7 @@ class CommandHandler internal constructor(// Handler for the parameter types
             val method: Method? = subCommand.method
 
             // Checks if it the command is default and remove the sub command argument one if it is not.
-            val argumentsList: MutableList<String?> = LinkedList(Arrays.asList(*arguments))
+            val argumentsList: MutableList<String?> = LinkedList(listOf(*arguments))
             if (!subCommand.defaultCmd && argumentsList.size > 0) argumentsList.removeAt(0)
 
             // Check if the method only has a sender as parameter.
@@ -289,7 +289,7 @@ class CommandHandler internal constructor(// Handler for the parameter types
             try {
                 val argsList: MutableList<String> = LinkedList(listOf(*args))
                 argsList.remove(subCommandArg)
-                return completionMethod.invoke(subCommand?.commandBase, argsList) as List<String>
+                return completionMethod.invoke(subCommand.commandBase, argsList) as List<String>
             } catch (e: IllegalAccessException) {
                 e.printStackTrace()
             } catch (e: InvocationTargetException) {
@@ -349,7 +349,7 @@ class CommandHandler internal constructor(// Handler for the parameter types
      * @return The Command data of the default method if there is one.
      */
     private val defaultSubCommand: CommandData?
-        private get() = commands.getOrDefault("default", null)
+        get() = commands.getOrDefault("default", null)
 
     /**
      * Checks if the method is default.

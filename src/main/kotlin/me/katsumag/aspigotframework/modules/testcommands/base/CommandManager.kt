@@ -16,10 +16,22 @@ import java.util.function.Consumer
 import java.util.logging.Level
 import kotlin.collections.HashMap
 
+/**
+ * Constructor for the manager
+ *
+ * @param plugin  The plugin's main class
+ * @param hideTab If should or not hide tab
+ */
+/**
+ * me.mattstudios.mf.Main constructor for the manager
+ *
+ * @param plugin The plugin's main class
+ */
+
 class CommandManager @JvmOverloads constructor(// The plugin's main class
-        private val plugin: Plugin, hideTab: Boolean = false) : Listener {
+        private val plugin: Plugin, private var hideTab: Boolean = false) : Listener {
     // The command map
-    private val commandMap: CommandMap?
+    private val commandMap = getCommandMap()
 
     // List of commands;
     private val commands: MutableMap<String, CommandHandler> = HashMap()
@@ -49,18 +61,14 @@ class CommandManager @JvmOverloads constructor(// The plugin's main class
     // The messages handler
     val messageHandler = MessageHandler()
 
-    // If should or not hide tab complete for no permissions
-    private var hideTab: Boolean
-
     /**
      * Registers commands.
      *
      * @param commands The list of command classes to register.
      */
     fun register(vararg commands: CommandBase) {
-        for (command in commands) {
-            register(command)
-        }
+        for (command in commands) register(command)
+
     }
 
     /**
@@ -170,20 +178,5 @@ class CommandManager @JvmOverloads constructor(// The plugin's main class
         }
         return commandMap
     }
-    /**
-     * Constructor for the manager
-     *
-     * @param plugin  The plugin's main class
-     * @param hideTab If should or not hide tab
-     */
-    /**
-     * me.mattstudios.mf.Main constructor for the manager
-     *
-     * @param plugin The plugin's main class
-     */
-    init {
-        plugin.server.pluginManager.registerEvents(this, plugin)
-        this.hideTab = hideTab
-        commandMap = getCommandMap()
-    }
+
 }
