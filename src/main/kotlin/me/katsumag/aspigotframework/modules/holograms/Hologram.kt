@@ -12,9 +12,7 @@ class Hologram(data: HologramData) {
     init {
         HologramHandler.register(this)
 
-        if (data.expireType == ExpireType.TIMED) {
-            Bukkit.getScheduler().scheduleSyncDelayedTask(JavaPlugin.getProvidingPlugin(Hologram::class.java), { stand.remove() }, data.expireType.time)
-        }
+        if (data.expireType != 0.toLong()) Bukkit.getScheduler().scheduleSyncDelayedTask(JavaPlugin.getProvidingPlugin(Hologram::class.java), { stand.remove() }, data.expireType)
 
     }
 
