@@ -1,6 +1,6 @@
 package me.katsumag.aspigotframework.modules.testcommands.base
 
-import me.katsumag.aspigotframework.colour
+import me.katsumag.aspigotframework.extensions.colour
 import me.katsumag.aspigotframework.modules.testcommands.annotations.*
 import me.katsumag.aspigotframework.modules.testcommands.base.components.CommandData
 import me.katsumag.aspigotframework.modules.testcommands.exceptions.CommandException

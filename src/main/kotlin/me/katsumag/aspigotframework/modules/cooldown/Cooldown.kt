@@ -1,6 +1,6 @@
 package me.katsumag.aspigotframework.modules.cooldown
 
-import me.katsumag.aspigotframework.bukkitRunnable
+import me.katsumag.aspigotframework.extensions.bukkitRunnable
 import org.bukkit.plugin.java.JavaPlugin
 import java.util.concurrent.TimeUnit
 

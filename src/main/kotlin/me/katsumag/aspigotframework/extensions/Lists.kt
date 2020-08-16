@@ -1,4 +1,4 @@
-package me.katsumag.aspigotframework
+package me.katsumag.aspigotframework.extensions
 
 fun List<String>.colour() : List<String> {
     return map { it.colour() }

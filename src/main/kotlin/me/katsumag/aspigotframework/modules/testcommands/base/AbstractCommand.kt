@@ -1,6 +1,6 @@
 package me.katsumag.aspigotframework.modules.testcommands.base
 
-import me.katsumag.aspigotframework.colour
+import me.katsumag.aspigotframework.extensions.colour
 
 abstract class AbstractCommand : CommandBase() {
 

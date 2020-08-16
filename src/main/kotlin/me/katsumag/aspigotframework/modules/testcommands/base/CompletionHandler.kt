@@ -1,10 +1,9 @@
 package me.katsumag.aspigotframework.modules.testcommands.base
 
-import jdk.nashorn.tools.ShellFunctions.input
-import me.katsumag.aspigotframework.colour
+import me.katsumag.aspigotframework.extensions.colour
 import me.katsumag.aspigotframework.modules.testcommands.base.components.CompletionResolver
 import me.katsumag.aspigotframework.modules.testcommands.exceptions.CommandException
-import me.katsumag.aspigotframework.sortCaseInsensitiveOrder
+import me.katsumag.aspigotframework.extensions.sortCaseInsensitiveOrder
 import org.bukkit.Bukkit
 import java.util.*
 import java.util.stream.Collectors

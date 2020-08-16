@@ -35,36 +35,15 @@ of ASpigotFramework, use version `1.0`. It should be replace `[VERSION]`.
 
 # Usage
 
-## Listener Module
-
-**kotlin**
-
-```kotlin
-createListener<SomeEvent>(YourPluginInstance) {
-    //your code here
-}
-```
-
-That's all that is required. ASF will register your listener for you.
-
-## ItemBuilder Module
-
-**kotlin**
-
-ASF has extension functions for Material and ItemStack so that they are easier to work with. You can find them all [here](https://github.com/katsumag/ASpigotFramework/blob/master/src/main/kotlin/me/katsumag/aspigotframework/modules/itembuilder/ItemExtensions.kt)
-
-An example of turning a Material into an ItemStack with a custom name and lore is shown below.
-
-```kotlin
-Material.OAK_WOOD.toItemStack()
-        .setItemAmount(64)
-        .setDisplayName("&4&lTest!")
-        .setLore("This", "is", "a", "&4&lTest!")
-```
+ * [Listener Module](src/main/resources/Listeners Usage.md)
+ * [Cooldown Module](src/main/resources/Cooldown Usage.md)
+ * [WorldBuilder Module](src/main/resources/WorldBuilder Usage.md)
+ * [Hologram Module](src/main/resources/Hologram Usage.md)
+ * [ItemBuilder Module](src/main/resources/ItemBuilder Usage.md)
        
 # General Extension Functions
 
-Since this framework/library is written in kotlin, we wrote some general extension functions, which you can find [here](https://github.com/katsumag/ASpigotFramework/blob/master/src/main/kotlin/me/katsumag/aspigotframework/GeneralExtensions.kt)
+Since this framework/library is written in kotlin, we wrote some general extension functions, which you can find [here](src/main/kotlin/me/katsumag/aspigotframework/extensions)
 
 # Contribute
 

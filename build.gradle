@@ -18,15 +18,18 @@ repositories {
     mavenCentral()
     mavenLocal()
     maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+    maven { url = 'https://repo.katsumag.me/repository/maven-releases' }
 }
 
 dependencies {
     compileOnly 'org.spigotmc:spigot:1.16.1-R0.1-SNAPSHOT'
+    implementation "me.katsumag:item-actions-lib:2.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }
 
 shadowJar {
-    relocate 'kotlin', 'me.katsumag.a-spigot-framework.shaded.kotlin'
+    relocate 'kotlin', 'me.katsumag.aspigotframework.shaded.kotlin'
+    relocate 'me.katsumag.itemactionslib', 'me.katsumag.aspigotframework.shaded.ial'
 }
 
 processResources {

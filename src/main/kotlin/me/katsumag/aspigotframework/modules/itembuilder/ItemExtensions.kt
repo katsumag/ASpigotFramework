@@ -1,6 +1,6 @@
 package me.katsumag.aspigotframework.modules.itembuilder
 
-import me.katsumag.aspigotframework.colour
+import me.katsumag.aspigotframework.extensions.colour
 import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.inventory.ItemStack
