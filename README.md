@@ -35,11 +35,11 @@ of ASpigotFramework, use version `1.0`. It should be replace `[VERSION]`.
 
 # Usage
 
- * [Listener Module](src/main/resources/Listeners Usage.md)
- * [Cooldown Module](src/main/resources/Cooldown Usage.md)
- * [WorldBuilder Module](src/main/resources/WorldBuilder Usage.md)
- * [Hologram Module](src/main/resources/Hologram Usage.md)
- * [ItemBuilder Module](src/main/resources/ItemBuilder Usage.md)
+ * [Listener Module](./src/main/resources/Listeners Usage.md)
+ * [Cooldown Module](./src/main/resources/Cooldown Usage.md)
+ * [WorldBuilder Module](./src/main/resources/WorldBuilder Usage.md)
+ * [Hologram Module](./src/main/resources/Hologram Usage.md)
+ * [ItemBuilder Module](./src/main/resources/ItemBuilder Usage.md)
        
 # General Extension Functions
 
