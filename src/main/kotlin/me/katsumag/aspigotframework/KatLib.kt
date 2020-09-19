@@ -1,14 +1,19 @@
 package me.katsumag.aspigotframework
 
-import me.katsumag.aspigotframework.modules.commands.Command
-import me.katsumag.aspigotframework.modules.listeners.createListener
-import me.katsumag.aspigotframework.modules.worldbuilder.factories.SuperflatWorldFactory
-import me.katsumag.aspigotframework.modules.worldbuilder.factories.VoidWorldFactory
-import me.katsumag.aspigotframework.modules.worldbuilder.options.LayerOption
-import me.katsumag.aspigotframework.modules.worldbuilder.options.LayerOptions
-import me.katsumag.aspigotframework.modules.worldbuilder.options.defaults.DefaultSuperflatOptions
+import me.katsumag.aspigotframework.commands.Command
+import me.katsumag.aspigotframework.listeners.createListener
+import me.katsumag.aspigotframework.recipes.crafting.CraftingShape
+import me.katsumag.aspigotframework.recipes.crafting.ShapedCraftingRecipe
+import me.katsumag.aspigotframework.recipes.crafting.ShapelessCraftingRecipe
+import me.katsumag.aspigotframework.worldbuilder.factories.SuperflatWorldFactory
+import me.katsumag.aspigotframework.worldbuilder.factories.VoidWorldFactory
+import me.katsumag.aspigotframework.worldbuilder.options.LayerOption
+import me.katsumag.aspigotframework.worldbuilder.options.LayerOptions
+import me.katsumag.aspigotframework.worldbuilder.options.defaults.DefaultSuperflatOptions
 import org.bukkit.Material
+import org.bukkit.NamespacedKey
 import org.bukkit.event.player.PlayerAdvancementDoneEvent
+import org.bukkit.inventory.ItemStack
 import org.bukkit.plugin.java.JavaPlugin
 
 class KatLib : JavaPlugin() {
@@ -38,6 +43,15 @@ class KatLib : JavaPlugin() {
                 LayerOption(Material.BEDROCK).addY(0),
                 LayerOption(Material.DIRT).addY(3, 4, 5)
         )).generate("name")
+
+        val shape = CraftingShape("%%*", "**(", "(**")
+        shape.setIngredient('%', Material.ITEM_FRAME)
+        shape.setIngredient('*', Material.ACACIA_BUTTON)
+        shape.setIngredient('(', Material.ACACIA_PRESSURE_PLATE)
+        val shapedRecipe = ShapedCraftingRecipe(ItemStack(Material.ACACIA_BOAT), NamespacedKey(this, "abc"), shape)
+
+        val shapelessRecipe = ShapelessCraftingRecipe(ItemStack(Material.ACACIA_BOAT), NamespacedKey(this, "abc"))
+        shapelessRecipe.setIngredients(Material.ITEM_FRAME, Material.ACACIA_SIGN)
 
     }
 
